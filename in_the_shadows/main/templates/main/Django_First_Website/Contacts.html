@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block active_contacts %}active{% endblock %}
+
+{% block article %}
+<article>
+	<h1>СВЯЗАТЬСЯ ПО ВОПРОСАМ РЕКЛАМЫ И СОТРУДНИЧЕСТВА</h1>
+	<div class="cont_ancestor">
+		<div class="cont_info">
+			<p><i class="fa-solid fa-at"></i>  matveipestrov@gmail.com</p>
+			<p><i class="fa-brands fa-telegram"></i>  t.me/pestrovm</p>
+			<p><i class="fa-solid fa-phone"></i>  +7 985 310-45-13</p>
+			<p><i class="fa-solid fa-phone"></i>  +7 985 692-28-69</p>
+			<h2>Фан-клуб</h2>
+			<p><i class="fa-solid fa-building"></i>  Логойский тракт 10, офис 8, Минск,<br>Беларусь</p>
+			<p><i class="fa-solid fa-calendar-week"></i>  Понедельник — суббота</p>
+			<p><i class="fa-solid fa-clock"></i>  10:00 — 20:00</p>
+			<p><i class="fa-solid fa-envelope"></i>  220113</p>
+			<p><i class="fa-brands fa-instagram"></i>  instagram.com/plpr_fanclub</p>
+		</div>
+		<div class="cont_iframe">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1174.2174654324397!2d27.608053!3d53.9417822!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf3e3d8b9a17%3A0x44b415cec7f04829!2z0JvQvtCz0L7QudGB0LrQuNC5INGC0YDQsNC60YIgMTAsINCc0LjQvdGB0Lo!5e0!3m2!1sru!2sby!4v1653515881988!5m2!1sru!2sby" width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+	</div>
+	<a id="com_form"></a>
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<fieldset class="contacts_fieldset">
+			<legend><h2 class="cont_com_h2">Оставить комментарий</h2></legend>
+			{{ form.name }}
+			{{ form.surname }}
+			<div class="contacts_photo">Фотография: {{ form.photo }}</div>
+			{{ form.text }}<br>
+			<button class="contacts_button cont_com_sub" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+			<button class="contacts_button cont_com_res" type="reset"><i class="fa-solid fa-trash"></i></button>
+			<span>{{ error }}</span>
+		</fieldset>
+	</form>
+</article>
+{% endblock %}

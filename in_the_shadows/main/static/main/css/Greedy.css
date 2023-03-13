@@ -1,0 +1,39 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+.greedy_ancestor {
+	display: grid;
+	grid-template-columns: 1fr 350px;
+	grid-template-rows: 100px 1fr 100px;
+	grid-template-areas:
+	"header header"
+	"main aside"
+	"footer aside";
+	height: 100%;
+	background: purple;
+}
+
+.greedy_1 {
+	grid-area: header;
+	background: green;
+}
+
+.greedy_2 {
+	grid-area: main;
+	background: violet;
+}
+
+.greedy_3 {
+	grid-area: footer;
+	background: yellowgreen;
+}
+
+.greedy_4 {
+	grid-area: aside;
+	background: skyblue;
+}

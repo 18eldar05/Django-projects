@@ -1,0 +1,641 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Comfortaa:wght@300&display=swap');
+
+/*-----------------ТЕЛА----------------------*/
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: black;
+	margin: 0;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+/*-----------------ТЕЛА----------------------*/
+/*-----------------АРТИКЛИ----------------------*/
+
+article {
+	font-family: 'Comfortaa', cursive;
+	background: black;
+	color: white;
+	font-size: 35px;
+	font-weight: 450;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.concerts_article{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.product_article{
+	padding-left: 10px;
+	padding-right: 0;
+}
+
+.bout_us_article {
+	font-family: 'Caveat', cursive;
+	padding-bottom: 40px;
+}
+
+.wrapper article {
+	flex: 1 1 auto;
+}
+
+h1 {
+	font-size: 60px;
+	font-family: 'Caveat', cursive;
+	text-align: center;
+	text-shadow: 4px 4px 2px red;
+}
+
+/*-----------------АРТИКЛИ----------------------*/
+/*-----------------ХЕДЕР----------------------*/
+
+header {
+  overflow: hidden;
+  background-color: #121212;
+}
+
+header nav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.logo_img {
+	height: 60px;
+	border-radius: 30px;
+	margin-top: 14px;
+	margin-left: 78px;
+	float: left;
+}
+
+.logo_img:hover {
+	height: 88px;
+	border-radius: 44px;
+	margin-top: 0;
+	margin-left: 64px;
+	transform: rotate(108000deg);
+	transition: 300s linear transform;
+}
+
+header a.active {
+	background: linear-gradient(to bottom, #cc0000 0%, #000066 0%);
+	color: white;
+}
+
+header nav a:hover {
+	background: #ddd;
+	color: black;
+}
+
+nav {
+	padding: 20px 10px;
+	float: right;
+}
+
+@media screen and (max-width: 513px) {
+  .logo_img {
+	float: none;
+	margin: 0 auto;
+	margin-top: 14px;
+  }
+  
+  .logo_img:hover {
+	margin: 0 auto;
+  }
+  
+  header a {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+  
+  nav {
+    float: none;
+  }
+  
+  header nav a {
+	float: none;
+  }
+}
+
+/*-----------------ХЕДЕР----------------------*/
+/*-----------------ГЛАВНАЯ----------------------*/
+
+.main_pic {
+	width: 380px;
+	float: left;
+	border-radius: 10px;
+	margin-bottom: 25px;
+}
+
+.main_p {
+	padding-left:415px;
+	padding-top: 150px;
+}
+
+@media screen and (max-width: 950px) {
+	.main_pic {
+		float: none;
+    }
+	
+	.main_p {
+		padding-left:0;
+		padding-top: 0;
+		padding-bottom: 0;
+    }
+}
+
+.vpered {
+    background-color: violet;
+	color: white;
+	text-align: center;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 36px;
+	line-height: 25px;
+	border-radius: 10px;
+}
+
+.vpered:hover {
+    background-color: red;
+    color: black;
+}
+
+/*-----------------ГЛАВНАЯ----------------------*/
+/*-----------------ЭСАЙД----------------------*/
+
+aside {
+	font-family: 'Comfortaa', cursive;
+	background: linear-gradient(to bottom, #cc0000 0%, #000099 100%);
+	color: white;
+	width: 200px;
+	padding: 10px;
+	float: right;
+	border-radius: 30px;
+}
+
+/*-----------------ЭСАЙД----------------------*/
+/*-----------------КОНЦЕРТЫ ФЛЕКСЫ----------------------*/
+
+.concerts_row {
+	display: flex;
+	flex-direction: row;
+	column-gap: 109px;
+	row-gap: 68px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.a_concert {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.concerts_ancestor {
+	display: flex;
+	margin-right: 220px;
+	margin-top: 88px;
+	margin-bottom: 68px;
+	/* background: violet; */
+	flex-direction: column;
+	justify-content: space-between;
+	height: 1625px;
+}
+
+@media screen and (max-width: 1300px) {
+	.concerts_ancestor {
+		height: auto;
+		row-gap: 68px;
+	}
+}
+
+@media screen and (max-width: 680px) {
+	aside {
+		float: none;
+		margin: 0 auto;
+	}
+	.concerts_ancestor {
+		margin-right: 0;
+	}
+}
+
+/* .c1 {
+	background: green;
+}
+
+.c2 {
+	background: yellowgreen;
+}
+
+.c3 {
+	background: yellow;
+}
+
+.c4 {
+	background: purple;
+}
+
+.c5 {
+	background: skyblue;
+}
+
+.c6 {
+	background: blue;
+}
+
+.c7 {
+	background: orange;
+}
+
+.c8 {
+	background: orangered;
+}
+
+.r1 {
+	background: beige;
+}
+
+.r2 {
+	background: brown;
+}
+
+.r3 {
+	background: dodgerblue;
+}
+
+.r4 {
+	background: grey;
+} */
+
+/*-----------------КОНЦЕРТЫ ФЛЕКСЫ----------------------*/
+/*-----------------КОНЦЕРТЫ КАРТИНКИ----------------------*/
+
+.city_pic {
+	height: 260px;
+	width: 380px;
+	border-radius: 6px;
+}
+
+.city_pic:hover {
+	transform: scale(1.15);
+	transition: all linear 0.3s;
+}
+
+.city_pic:active {
+	transform: scale(1);
+	transition: all linear 0s;
+}
+
+.photo {
+    display: inline-block;
+    position: relative;
+	padding-left: 29px;
+	padding-right: 29px;
+}
+
+.photo:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 0; right: 0; bottom: -12px;
+    z-index: 1;
+    background: rgba(0,42,167,0.6);
+    color: #fff;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    padding: 5px 10px;
+    border: 1px solid #333;
+}
+
+/*-----------------КОНЦЕРТЫ КАРТИНКИ----------------------*/
+/*-----------------КОНЦЕРТЫ ТЕКСТ----------------------*/
+
+.city_txt {
+	font-weight: bold;
+}
+
+/*-----------------КОНЦЕРТЫ ТЕКСТ----------------------*/
+/*-----------------КОНЦЕРТЫ КНОПКИ----------------------*/
+
+.city_but {
+	color: white;
+	background: linear-gradient(to bottom, #000066 -50%, #cc0000 100%);
+	font-size: 35px;
+	font-weight: 450;
+	border-radius: 40px 10px;
+	font-family: 'Comfortaa', cursive;
+	padding: 60px;
+	padding-top: 7px;
+	padding-bottom: 2px;
+	text-decoration: none;
+	float: left;
+}
+
+.city_but:hover {
+	background: #ddd;
+	color: black;
+	transition: 2s all;
+}
+
+.city_but:active{
+	color: red;
+	transform: scale(0.9);
+	transition: 0s all;
+}
+
+#topbutton {
+	position:fixed;
+	bottom:18px;
+	right:34px;
+	color: white;
+	font-size:44px;
+	text-decoration: none;
+}
+
+#topbutton:hover {
+	font-size:58px;
+	bottom:11px;
+	right:27px;
+}
+
+#topbutton:active {
+	font-size:44px;
+	bottom:18px;
+	right:34px;
+}
+
+/*-----------------КОНЦЕРТЫ КНОПКИ----------------------*/
+/*-----------------ФУТЕР----------------------*/
+
+footer {
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	background: #292929;
+	color: white;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+footer a {
+	padding-left: 30px;
+	padding-right: 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/*-----------------ФУТЕР----------------------*/
+/*-----------------ПРОДУКТ----------------------*/
+
+.club_logo {
+	height: 300px;
+}
+
+.club_pic {
+	padding: 10px;
+	width: 450px;
+	height: 300px;
+	border-radius: 25px;
+}
+
+.ancestor {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.left_main_block {
+	/* background: grey; */
+	display: flex;
+	flex-direction: column;
+	padding-left:10px;
+}
+
+.right_main_block {
+	/* background: darkgrey; */
+	padding-left: 25px;
+	padding-top: 10px;
+}
+
+.left_minor_block_one {
+	display: flex;
+	align-items: center;
+	/* background: purple; */
+}
+
+/* .left_minor_block_two {
+	background: skyblue;
+}
+
+.left_minor_block_three {
+	background: blue;
+} */
+
+.club_name {
+	font-style: italic;
+	font-size: 47px;
+	font-weight: 900;
+}
+
+.prod_span {
+	line-height: 52px;
+}
+
+.prod_tickets {
+	margin-left: 15px;
+}
+
+.prod_but_div {
+	margin-top: 25px;
+}
+
+/*-----------------ПРОДУКТ----------------------*/
+/*-----------------КОНТАКТЫ----------------------*/
+
+.cont_ancestor {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+/* .cont_info {
+	background: violet;
+} */
+
+.cont_iframe {
+	display: flex;
+	/* background: purple; */
+	flex-grow: 1;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cont_com_h2 {
+	line-height: 0;
+}
+
+.contacts_fieldset {
+	padding-top: 0;
+	text-align: center;
+}
+
+.contacts_photo {
+	margin-top: 10px;
+	background: white;
+	width: 506px;
+	margin-left: 522px;
+	border-radius: 2px;
+	color: #8B7575;
+	font-family: Arial, serif;
+	font-size: 14px;
+	font-weight: 1;
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+
+.contacts_input {
+	height: 40px;
+	width: 240px;
+}
+
+.contacts_textarea {
+	height: 90px;
+	width: 501px;
+	margin-top: 10px;
+}
+
+.contacts_button {
+	cursor: pointer;
+	margin-top: 2px;
+	font-size: 25px;
+	height: 44px;
+	width: 248px;
+}
+
+.cont_com_sub:hover {
+	background: skyblue;
+}
+
+.cont_com_res:hover {
+	background: red;
+}
+
+/*-----------------КОНТАКТЫ----------------------*/
+/*-----------------О МУЗЫКАНТЕ----------------------*/
+
+.bout_ancestor {
+	/* background: brown; */
+	display: flex;
+}
+
+.bout_info_1 {
+	padding-right: 25px;
+	float: left;
+	/* background: purple; */
+}
+
+.bout_info_2 {
+	border-left: 7px double;
+	padding-left: 25px;
+	padding-right: 25px;
+	/* background: violet; */
+}
+
+.bout_info_3 {
+	padding-left: 25px;
+	border-left: 7px double;
+	/* background: blue; */
+}
+
+.ava {
+	width: 50px;
+	height: 50px;
+	border-radius: 100px;
+}
+
+.fio {
+	margin-left: 10px;
+}
+
+.bout_comments_ancestor {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Comfortaa', cursive;
+	flex-wrap: wrap;
+	/* background: violet; */
+}
+
+.bout_comment {
+	font-size: 25px;
+	width: 800px;
+	/* background: purple; */
+}
+
+.com_head {
+	display: flex;
+	align-items: center;
+	font-weight: 900;
+	/* background: skyblue; */
+}
+
+.com_txt {
+	font-weight: 100;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	/* background: blue; */
+}
+
+.com_foot {
+	display: flex;
+	color: #939393;
+	justify-content: space-between;
+	/* background: beige; */
+}
+
+.no_one {
+	color: white;
+}
+
+.no_one:hover {
+	color: violet;
+}
+
+.no_one:active {
+	color: red;
+}
+
+@media screen and (max-width: 1150px) {
+	.bout_ancestor {
+		flex-wrap: wrap;
+	}
+	
+	.bout_info_1 {
+	float: none;
+	}
+}
+
+@media screen and (max-width: 865px) {
+	.bout_comment {
+	font-size: 15px;
+	width: 400px;
+	}
+}
+
+/*-----------------О МУЗЫКАНТЕ----------------------*/

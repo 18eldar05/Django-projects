@@ -1,0 +1,21 @@
+{% extends 'estiem/base.html' %}
+{% load estiem_tags %}
+
+{% block content %}
+<div class="big_event_flex">
+    <div class="big_event_top">
+        {% if post.photo %}
+            <img class="big_event_img" src="{{post.photo.url}}">
+        {% endif %}
+        <h1 class="big_event_header">{{title}}</h1>
+    </div>
+    <div class="big_event_content">
+        <div class="big_event_content_text">
+            {{post.content|linebreaks}}
+            {% if kind_content %}
+                {% what_is_event name=kind_name content=kind_content %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

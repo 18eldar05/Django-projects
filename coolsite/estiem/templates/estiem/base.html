@@ -1,0 +1,96 @@
+{% load static %}
+{% load estiem_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link type="text/css" href="{% static 'estiem/css/styles.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'estiem/images/favicon.ico' %}" type="image/x-icon">
+</head>
+<body>
+    {% block mainmenu %}
+    <header>
+        <a href="{% url 'home' %}"><img class="logo" src="{% static 'estiem/images/estiem_logo.png' %}"></a>
+        <nav>
+            {% for m in menu %}
+                {#<!--{% if not forloop.last %}-->#}
+                    {% if request.user.is_superuser and forloop.counter == 3 %}
+                        <a href="/admin">Администрирование</a>
+                    {% endif %}
+                    <a href="{% url m.url_name %}">{{m.title}}</a>
+                {#<!--{% else %}-->#}
+                    {#<!--<a href="{% url m.url_name %}" class="last">{{m.title}}</a>-->#}
+                {#<!--{% endif %}-->#}
+            {% endfor %}
+
+            {% if request.user.is_authenticated %}
+                <span class="header_name">{{user.username}}</span>|<a href="{% url 'logout' %}">Выйти</a>
+            {% else %}
+                <a href="{% url 'register' %}">Регистрация</a>|<a href="{% url 'login' %}">Войти</a>
+            {% endif %}
+        </nav>
+    </header>
+    <div class="wrapper">
+        <div class="main_div">
+            <aside>
+                {# <!--{% load cache %}--> #}
+                {# <!--{% cache 60 sidebar %}--> #}
+                {% if cat_selected == 0 %}
+                    <div class="all selected">all events</div>
+                {% else %}
+                    <a href="{% url 'home' %}"><div class="cat all">all events</div></a>
+                {% endif %}
+
+                {% for c in cats %}
+                    {% if c.estiem__count > 0 %}
+                        {% if cat_selected == c.pk %}
+                            <div class="cat_{{forloop.counter}} selected">{{c.name}} events</div>
+                        {% else %}
+                            <a href="{{c.get_absolute_url}}" class="a_cat_{{forloop.counter}}"><div class="cat cat_{{forloop.counter}}">{{c.name}} events</div></a>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                {# <!--{% show_categories cat_selected=cat_selected %}--> #}
+                {# <!--{% endcache %}--> #}
+            </aside>
+            {% endblock mainmenu %}
+
+            <article>
+                {% block content %}
+                {% endblock %}
+                {% if page_obj.has_other_pages %}
+                    <nav class="list_pages">
+                        <ul>
+                            {% if page_obj.has_previous %}
+                                <a href="?page={{page_obj.previous_page_number}}"><li class="page_num">&lt;</li></a>
+                            {% endif %}
+
+                            {% for p in paginator.page_range %}
+                                {% if page_obj.number == p %}
+                                    <li class="page_num page_num_selected">{{p}}</li>
+                                {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+                                    <a href="?page={{p}}"><li class="page_num">{{p}}</li></a>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if page_obj.has_next %}
+                                <a href="?page={{page_obj.next_page_number}}"><li class="page_num">&gt;</li></a>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                {% endif %}
+                {% block content_and_list_pages_end %}{% endblock %}
+            </article>
+        </div>
+
+        <footer>
+            <a href="https://estiem.org/contact">Contact</a> |
+            <a href="https://estiem.org/feedback">Feedback</a> |
+            <a href="https://estiem.org/alumni">ESTIEM Alumni</a> |
+            <a href="https://donorbox.org/estiem">Donate to ESTIEM</a> |
+            <a href="https://internal.estiem.org/privacy-policy">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>

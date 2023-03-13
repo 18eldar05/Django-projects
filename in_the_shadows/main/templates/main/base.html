@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %}{% endblock %}</title>
+		<link href="{% static 'main/css/Gorgeous.css' %}" rel="stylesheet" type="text/css"/>
+		<link href="{% static 'main/images/Plohoyparen_logo.png' %}" rel="shortcut icon" type="image/png">
+		<script src="https://kit.fontawesome.com/0030d03b59.js" crossorigin="anonymous"></script>
+		{% block button_up_script %}{% endblock %}
+	</head>
+	<body>
+		{% block wrapper_start %}{% endblock %}
+		<header>
+			<a href="{% url 'Main.html' %}"><img class="logo_img" src="../../../static/main/images/Plohoyparen_logo.jpg"></a>
+			<nav>
+				<a class="{% block active_concerts %}{% endblock %}" href="{% url 'Concerts.html' %}">Концерты</a>
+				<a class="{% block active_contacts %}{% endblock %}" href="{% url 'Contacts.html' %}">Контакты</a>
+				<a class="{% block active_bout_us %}{% endblock %}" href="{% url 'Bout_us.html' %}">О музыканте</a>
+			</nav>
+		</header>
+		{% block article %}{% endblock %}
+		<footer>
+			<a href="https://music.apple.com/ru/artist/plohoyparen/1390569747" class="fa-brands fa-itunes"> Apple Music</a>
+			<a href="https://soundcloud.com/horoshiiparen" class="fa-brands fa-soundcloud"> SoundCloud</a>
+			<a href="https://www.youtube.com/channel/UCqkFun_vTCchdrFysSeU84Q" class="fa-brands fa-youtube"> YouTube</a>
+			<a href="https://vk.com/plohoyparenboss" class="fa-brands fa-vk"> VK</a>
+		</footer>
+		{% block wrapper_end %}{% endblock %}
+	</body>
+</html>

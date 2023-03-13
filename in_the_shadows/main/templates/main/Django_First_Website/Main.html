@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block wrapper_start %}<div class="wrapper">{% endblock %}
+
+{% block article %}
+<article>
+	<h1>PlOHOYPAREN: САЙТ ГЛАВНОГО АРТИСТА 2022 ГОДА</h1>
+	<img class="main_pic" src="../../../static/main/images/Plohoyparen_picture.jpg">
+	<p class="main_p">
+		Всё для фанатов и ценителей новой школы:<br>
+		концерты, биография и многое другое<br><br><br>
+		<a class="vpered" href="{% url 'Concerts.html' %}">Вперёд!</a>
+	</p>
+</article>
+{% endblock %}
+
+{% block wrapper_end %}</div>{% endblock %}

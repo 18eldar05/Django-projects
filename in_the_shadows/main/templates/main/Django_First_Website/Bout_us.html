@@ -1,0 +1,214 @@
+{% extends 'main/base.html' %}
+
+{% block title %}О музыканте{% endblock %}
+
+{% block button_up_script %}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript">
+	function up() {
+		var top = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+		if(top > 0) {
+			window.scrollBy(0,((top+100)/-10));
+			t = setTimeout('up()',20);
+		} else clearTimeout(t);
+		return false;
+	}
+</script>
+{% endblock %}
+
+{% block active_bout_us %}active{% endblock %}
+
+{% block article %}
+<article class="bout_us_article">
+	<h1>PLOHOYPAREN: КТО ЭТО ТАКОЙ?</h1>
+	<div class="bout_info_1">
+		<b>Полное имя:</b> Константин Смоляр<br>
+		<b>Псевдоним:</b> PlohoyParen<br>
+		<b>Дата рождения:</b> 19 августа 2000 г.<br>
+		<b>Возраст:</b> 21 год<br>
+		<b>Место проживания:</b> Москва, Россия<br>
+		<b>Знак зодиака:</b> Лев<br>
+		<b>Рост:</b> 170 см | <b>Вес:</b> 60 кг<br>
+		<b>Семейное положение:</b> не женат
+	</div>
+	<div class="bout_ancestor">
+		<div class="bout_info_2">
+			Рэп-исполнитель PlohoyParen, настоящее имя которого Константин Смоляр,
+			родился 19 августа 2000 года в городе Москва, где провел свои детские и юношеские годы.
+			Свой творческий путь Костя начал в 2016 году, когда представил общественности релиз "Beverly",
+			состоящий из 4 треков. Thrill Pill является тем, кто способствовал подобному продвижению парня
+			и оказал ему необходимую поддержку.
+			В 2017 году был выпущен "Good Bye" – релиз, который имеет в своем составе 5 аудиозаписей.
+			Отличительной чертой ЕР является то, что исполнитель с лайтового сменил стиль исполнения на
+			более активный и агрессивный, что по достоинству оценили поклонники.
+			Необходимо отметить, что творческие поиски самого себя лишь с позитивной стороны характеризируют
+			любого исполнителя.
+			"Plohoy Tape" был представлен общественности в 2017 году. Он состоит из 5 композиций, которые
+			выполненные в типичном для артиста стиле.
+		</div>
+		<div class="bout_info_3">
+			Шаг за шагом молодой исполнитель завоевывает свою фан-базу,
+			которая поддерживает его во всех начинаниях.
+			В феврале 2018 года PlohoyParen презентует общественности релиз "Музыкальная Книга". Он состоит из 9
+			аудиотреков, которые никого не оставят равнодушными благодаря обширности затронутых тем.
+			"Hello My Name" – именно такое название получил релиз, который вышел в августе 2018 года. Пластинка
+			состоит из 9 треков, где исполнитель в полной мере демонстрирует все свои умения.
+			Каждая песня обладает имеет что-то цепляющее и притягательное, поэтому поклонники по достоинству оценили
+			выпущенный материал.
+			Plohoyparen – артист, который, благодаря упорству и чувству стиля, сумел достичь определенных успехов.
+			Но, необходимо отметить, что этом останавливаться исполнитель не желает, поэтому в будущем будет презентовано
+			много творческих новинок, которые по достоинству будут оценены поклонниками.
+		</div>
+	</div>
+	<hr>
+	<div class="bout_comments_ancestor">
+		<a id="coms"></a>
+		<h2>Комментарии</h2>
+		<div>
+			{% if comments %}
+				{% for el in comments %}
+					<div class="bout_comment">
+						<hr>
+						<div class="com_head">
+							{% if el.photo %}
+								<img class="ava" src="{{ el.photo.url }}">
+							{% else %}
+								<img class="ava" src="https://vk.com/images/camera_200.png">
+							{% endif %}
+							<span class="fio">{{ el.name }} {{ el.surname }}</span>
+						</div>
+						<div class="com_txt">
+							 {{ el.text }}
+						</div>
+						<div class="com_foot">
+							{{ el.pub_date }}<span><i class="fa-solid fa-heart"></i> {{ el.likes }}</span>
+						</div>
+					</div>
+				{% endfor %}
+			{% else %}
+				<h5>Пока никто не оставил комментарий. <a class="no_one" href="{% url 'Contacts.html' %}#com_form">Будьте первыми!</a></h5>
+			{% endif %}
+
+			<div class="bout_comment">
+				<hr>
+				<div class="com_head">
+					<img class="ava" src="https://sun1.beltelecom-by-minsk.userapi.com/s/v1/ig2/FSrIN-4dMb-SvmK9kCl49tayH_Kz-lLlnuR8u2mEgvdzdCPOjtYXP9fVJNOd1l8hhYkrycELGwO3g1LZZgpzl2dk.jpg?size=50x50&quality=95&crop=146,259,460,460&ava=1">
+					<span class="fio">Artur Asapov</span>
+				</div>
+				<div class="com_txt">
+					Чел поднял, и опередил по звуку всех топ артистов на данный момент. Неоправданно  мало внимания к нему(
+				</div>
+				<div class="com_foot">
+					25 дек 2021<span><i class="fa-solid fa-heart"></i> 35</span>
+				</div>
+			</div>
+
+			<div class="bout_comment">
+				<hr>
+				<div class="com_head">
+					<img class="ava" src="https://sun1.beltelecom-by-minsk.userapi.com/s/v1/ig2/eMC3m9dG3druqQ_bBaQS3uFBlKJxOYTWLRcmuZPSyNxT-fvgmEyj_gesZ7bbWtPriVPLnfl2Etpzb1Hhm3Dk2dbA.jpg?size=50x50&quality=95&crop=8,248,1692,1692&ava=1">
+					<span class="fio">Никита Орехов</span>
+				</div>
+				<div class="com_txt">
+					Плохой поц залетай в Самару, мы очень ждем
+				</div>
+				<div class="com_foot">
+					2 мая в 11:13<span><i class="fa-solid fa-heart"></i> 14</span>
+				</div>
+			</div>
+
+			<div class="bout_comment">
+				<hr>
+				<div class="com_head">
+					<img class="ava" src="https://sun2.beltelecom-by-minsk.userapi.com/s/v1/ig2/ivfDKavyDPbpyOziX6Zzrk1WtLduaqAOOBI8Hh2cwAc2M-xFu2KlqzKOApVvYZ2pv7I_xWvRnOoYjGpM5JBbsTy-.jpg?size=50x50&quality=96&crop=140,213,718,718&ava=1">
+					<span class="fio">Игорь Батонов</span>
+				</div>
+				<div class="com_txt">
+					Где купить шапку как у него
+				</div>
+				<div class="com_foot">
+					30 янв в 12:36<span><i class="fa-solid fa-heart"></i> 9</span>
+				</div>
+			</div>
+
+			<div class="bout_comment">
+				<hr>
+				<div class="com_head">
+					<img class="ava" src="https://sun1.beltelecom-by-minsk.userapi.com/s/v1/ig2/RRhbJcO40mHlbUEZLsXqMHc_d5XxJICkYr1HuJwaR8E1XWSMllgZEGfqjMhuV5Uu4XdpzNcV3Uik-MFyWT7AYgE9.jpg?size=50x50&quality=96&crop=331,963,708,708&ava=1">
+					<span class="fio">Борис Котаев</span>
+				</div>
+				<div class="com_txt">
+					Брат давай про бравл старс треки
+				</div>
+				<div class="com_foot">
+					22 авг 2021<span><i class="fa-solid fa-heart"></i> 20</span>
+				</div>
+			</div>
+
+			<div class="bout_comment">
+				<hr>
+				<div class="com_head">
+					<img class="ava" src="https://sun1.beltelecom-by-minsk.userapi.com/s/v1/ig2/7dBc4DgwvJ1nlYVrgIBNKvAmBAZdwgL78X8QDV2-mwZ1PU7XDjTfTFXSSi1c1ECTEzH62RZKrYA4QxxGs3BDjhZE.jpg?size=50x50&quality=95&crop=27,94,615,615&ava=1">
+					<span class="fio">SCADY MUSIC</span>
+				</div>
+				<div class="com_txt">
+					Был в тылу, а стал в главе, Плохой поц сделал круче своих ребят всех вместе взятых. Отличная работа
+				</div>
+				<div class="com_foot">
+					27 дек 2021<span><i class="fa-solid fa-heart"></i> 13</span>
+				</div>
+			</div>
+
+			<div class="bout_comment">
+				<hr>
+				<div class="com_head">
+					<img class="ava" src="https://sun1.beltelecom-by-minsk.userapi.com/s/v1/ig2/NNIZ2MJ6C00q54j3MBknjSNy8_fVd-1TjMFN5PlJwRQGbFgetmUJUr27vTyTy_Uqw7cw-KLNjugM-fhTlnqL6lCH.jpg?size=50x50&quality=95&crop=0,0,735,735&ava=1">
+					<span class="fio">Александр Слепченко</span>
+				</div>
+				<div class="com_txt">
+					я так понимаю треки можно не ждать больше?
+				</div>
+				<div class="com_foot">
+					25 мар в 14:58<span><i class="fa-solid fa-heart"></i> 14</span>
+				</div>
+			</div>
+
+			<div class="bout_comment">
+				<hr>
+				<div class="com_head">
+					<img class="ava" src="https://sun2.beltelecom-by-minsk.userapi.com/s/v1/ig2/DyGhKKmqhat3g2wFE8Kmkw9muVycgpH-HVnxa3XYabKVCyxX1HekcJlZZx1Cu48K_0BcLxrb62GUAicMFwRgTWDx.jpg?size=50x50&quality=95&crop=172,282,614,614&ava=1">
+					<span class="fio">Сергей Сергеев</span>
+				</div>
+				<div class="com_txt">
+					ждем проверочек как с моргеном)))
+				</div>
+				<div class="com_foot">
+					6 дек 2021<span><i class="fa-solid fa-heart"></i> 6</span>
+				</div>
+			</div>
+
+			<div class="bout_comment">
+				<hr>
+				<div class="com_head">
+					<img class="ava" src="https://sun1.beltelecom-by-minsk.userapi.com/s/v1/ig2/5r1NGVrG6gWmSswSNXn8Sv2JxqpaAHzl45ar4tV7793MpiQFMqCkr-XCn8OiLbPx43_EmO-RbLczQg_RFic1_jQF.jpg?size=50x50&quality=95&crop=0,0,1345,1345&ava=1">
+					<span class="fio">Андрей Кузнецов</span>
+				</div>
+				<div class="com_txt">
+					Наконец-то музыка будет в одноклассниках, на самой солидной платформе.
+					Ты представь, сколько там свежей аудитории. Ты представь флексящих под
+					Таблетку бабулек и с грустью слушающих Замок дедов
+				</div>
+				<div class="com_foot">
+					26 мар в 3:15<span><i class="fa-solid fa-heart"></i> 5</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="back-top">
+		<a href="#" onclick="return up()" title="Вернуться к началу" id="topbutton">
+			<i class="fa-solid fa-circle-up"></i>
+		</a>
+	</div>
+</article>
+{% endblock %}

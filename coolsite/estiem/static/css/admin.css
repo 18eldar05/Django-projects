@@ -1,0 +1,52 @@
+#header, .module caption, .module h2 {
+    /*background-color: #cc0000;*/
+    /*background-color: #5e3a00;*/
+    background-color: #325D46;
+}
+
+#header {
+    /*padding: 14.6px 40px;*/
+    padding: 0 0;
+}
+
+#branding h1 a:visited {
+    /*color: #f5dd5d;*/
+    color: white;
+}
+
+#user-tools {
+    color: white;
+}
+
+#header a:link, #header a:visited {
+    color: #99AEA3;
+}
+
+#user-tools a {
+    border: none;
+    padding: 9px;
+    /*font-size: 18px;*/
+}
+
+#user-tools a:hover {
+    background-color: #5D8872;
+}
+
+.logo {
+    margin: 0px 0 11px 135px;
+    /*padding-bottom: 4px;*/
+    /*background-color: #5D8872;*/
+}
+
+.logo_text {
+    margin-left: 8px;
+    /*margin-top: 12px;*/
+    /*margin-top: 1000px;*/
+    /*padding-top: 800px;*/
+    /*padding-bottom: 800px;*/
+    /*background-color: #000066;*/
+    font-size: 28px;
+    /*font-weight: bold;*/
+    /*font-family: cursive;*/
+    line-height: 57px;
+}

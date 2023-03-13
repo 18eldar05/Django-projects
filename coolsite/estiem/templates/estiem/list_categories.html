@@ -1,0 +1,7 @@
+{% for c in cats %}
+    {% if cat_selected == c.pk %}
+        <div class="cat_{{forloop.counter}} selected">{{c.name}} events</div>
+    {% else %}
+        <a href="{{c.get_absolute_url}}" class="a_cat_{{forloop.counter}}"><div class="cat_{{forloop.counter}}">{{c.name}} events</div></a>
+    {% endif %}
+{% endfor %}

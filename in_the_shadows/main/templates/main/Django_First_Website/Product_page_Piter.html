@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Санкт-Петербург{% endblock %}
+
+{% block article %}
+<article class="product_article">
+	<h1>КОНЦЕРТ В САНКТ-ПЕТЕРБУРГЕ</h1>
+	<div class="ancestor">
+		<div class="left_main_block">
+			<div class="left_minor_block_one">
+				<img class="club_logo" src="../../../static/main/images/white_logo.gif"><h3 class="club_name">Aurora Concert Hall</h3>
+			</div>
+			<div class="left_minor_block_two">
+				<img class="club_pic" src="../../../static/main/images/Aurora3.jpg">
+				<img class="club_pic" src="../../../static/main/images/Aurora5.jpg">
+			</div>
+			<div class="left_minor_block_three">
+				<img class="club_pic" src="../../../static/main/images/Aurora7.jpg">
+				<img class="club_pic" src="../../../static/main/images/Aurora8.jpg">
+			</div>
+		</div>
+		<div class="right_main_block">
+			<p><i class="fa-solid fa-calendar-days"></i>  Суббота, 11 июня 2022 года</p>
+			<p><i class="fa-solid fa-clock"></i>  19:00</p>
+			<p><i class="fa-solid fa-ticket"></i>  Танцпол - 1700₽, VIP - 4000₽</p>
+			<p><i class="fa-solid fa-child"></i>  16+</p>
+			<p><i class="fa-solid fa-phone"></i>  +7 (812) 907-19-17</p>
+			<i class="fa-solid fa-location-dot"></i>  Пироговская наб., 5/2.<br>
+			<span class="prod_span"><i class="fa-solid fa-train-subway"></i> Горьковская <i class="fa-solid fa-train-subway"></i> Площадь Ленина</span><br>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1997.521280208524!2d30.342903586286617!3d59.95667616825075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696316ff9319fcd%3A0xb8dc7d7a021b0a49!2sAurora%20Concert%20Hall!5e0!3m2!1sru!2sby!4v1653477961724!5m2!1sru!2sby" width="650" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			<div class="prod_but_div">
+				<a class="vpered" href="{% url 'Concerts.html' %}"><i class="fa-solid fa-arrow-left-long"></i> Назад</a>
+				<a class="vpered prod_tickets" href="https://ru.concerty.com/artist/613f2beb-292c-4d71-9cbc-0dc77cf7dbf5">Билеты <i class="fa-solid fa-arrow-right-long"></i></a>
+			</div>
+		</div>
+	</div>
+</article>
+{% endblock %}

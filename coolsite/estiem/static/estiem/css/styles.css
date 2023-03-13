@@ -1,0 +1,339 @@
+body {
+    background-color: white;
+    margin: 0;
+    font-family: Arial;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    margin: 12px 0 12px 135px;
+}
+
+header {
+    background-color: #325D46;
+    position: sticky;
+    z-index: 3;
+    top: 0;
+}
+
+footer {
+    background-color: #325D46;
+    position: sticky;
+    z-index: 3;
+    bottom: 0;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+footer a {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+}
+
+header nav {
+    float: right;
+    /*background-color: violet;*/
+    line-height: 57px;
+    margin-right: 68px;
+}
+
+header nav, header nav a {
+    font-size: 18px;
+    color: #99AEA3;
+}
+
+header nav a, .header_name {
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 9px;
+}
+
+header nav a:hover {
+    background-color: #5D8872;
+}
+
+.header_name {
+    color: white;
+}
+
+.last {
+    /*color: red;*/
+}
+
+article {
+    padding-top: 40px;
+    /*text-align: center;*/
+    margin: 0 auto;
+    /*background-color: darksalmon;*/
+    /*width: 100%;*/
+    /*display: grid;*/
+    /*grid-template-rows: 1fr 50px;*/
+    /*flex-wrap: wrap;*/
+    /*justify-content: center;*/
+}
+
+/*button {*/
+/*    background-color: cornflowerblue;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    padding: 10px;*/
+/*    border-radius: 6px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*button:hover {*/
+/*    background-color: #010156;*/
+/*}*/
+
+/*aside a {*/
+/*    text-decoration-color: white;*/
+/*}*/
+
+.cat {
+    /*border: 4px solid white;*/
+}
+
+.cat:hover {
+    box-shadow: 3px 3px 6px 3px rgba(0,0,0,0.85);
+}
+
+.all {
+    background-color: #325D46;
+    border: 4px solid #325D46;
+    padding: 11px;
+}
+
+.cat_1 {
+    /*background-color: #6C1C19;*/
+    background-color: maroon;
+    border: 4px solid maroon;
+    color: white;
+}
+
+.cat_2 {
+    /*background-color: #152A5B;*/
+    background-color: #000099;
+    border: 4px solid #000099;
+    color: white;
+}
+
+.cat_3 {
+    /*background-color: #E9943E;*/
+    /*background-color: #EDA15B;*/
+    background-color: orange;
+    border: 4px solid orange;
+    color: white;
+}
+
+.cat_4 {
+    /*background-color: #325D46;*/
+    background-color: darkolivegreen;
+    border: 4px solid darkolivegreen;
+    color: white;
+}
+
+.cat_5, .cat_6, .cat_7, .cat_8 {
+    background-color: #FCECD0;
+    border: 4px solid #FCECD0;
+    color: #605751;
+}
+
+.selected {
+    border: 4px solid black;
+    /*box-shadow: 0px 0px 9px 6px rgba(0,0,0,0.8);*/
+}
+
+/*.a_cat_5, .a_cat_6 {*/
+/*    text-decoration-color: #605751;*/
+/*}*/
+
+aside div {
+    padding: 22px;
+    color: white;
+    font-size: 18px;
+    margin: 15.85px 0 15.85px 15.85px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+aside {
+    /*background-color: deeppink;*/
+    flex-shrink: 0;
+}
+
+.main_div {
+    display: flex;
+}
+
+.index_cat {
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.index_time {
+    margin-left: 25px;
+}
+
+.event_img {
+    /*margin-top: 10px;*/
+    /*margin-bottom: 10px;*/
+    /*height: 180px;*/
+    width: 270px;
+}
+
+.event_img:hover {
+    transform: scale(1.125);
+	transition: transform linear 0.2s;
+    /*height: 180px;*/
+    /*margin-top: 0;*/
+    /*margin-bottom: 0;*/
+    /*margin-left: 0;*/
+}
+
+.event_title {
+    color: #325D46;
+}
+
+.index_time {
+    color: black;
+}
+
+.event_container {
+    /*margin-left: 50px;*/
+    width: 270px;
+    /*height: 310px;*/
+    margin-bottom: 28px;
+    /*background-color: cornflowerblue;*/
+    /*float: left;*/
+}
+
+.content_and_list_pages_end {
+    /*padding-top: 40px;*/
+    /*text-align: center;*/
+    /*background-color: red;*/
+    /*width: 100%;*/
+    display: grid;
+    grid-template-rows: 1fr 50px;
+    /*flex-wrap: wrap;*/
+    /*justify-content: center;*/
+    /*margin: 0 auto;*/
+    height: 100%;
+}
+
+.total_events {
+    /*background-color: #cc0000;*/
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 50px;
+    /*grid-area: 1 / 1 / 4 / 5;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*width: 1000px;*/
+    /*flex-wrap: wrap;*/
+}
+
+.big_event_img {
+    height: 499px;
+    /*flex-basis: 499px;*/
+    /*float: left;*/
+}
+
+.big_event_flex {
+    display: flex;
+    flex-direction: column;
+    /*flex: 1 auto;*/
+    margin: 0 15px;
+    /*align-items: end;*/
+    /*background-color: deeppink;*/
+}
+
+.big_event_top {
+    display: flex;
+    /*background-color: #8B7575;*/
+}
+
+.big_event_header {
+    text-align: center;
+    flex-grow: 1;
+    /*background-color: orangered;*/
+}
+
+.big_event_content {
+    display: flex;
+    /*background-color: darkblue;*/
+    justify-content: center;
+    /*flex-basis: 680px;*/
+    margin-bottom: 9px;
+}
+
+.big_event_content_text {
+    /*width: 680px;*/
+    flex-basis: 682px;
+}
+
+.about {
+    width: 680px;
+}
+
+.form_input {
+    color: white;
+    background-color: orangered;
+}
+
+/*.list_pages_container {*/
+    /*text-align: center;*/
+    /*background-color: red;*/
+    /*width: 1330px;*/
+/*}*/
+
+.list_pages {
+    text-align: center;
+    /*background-color: pink;*/
+    /*display: inline-block;*/
+    /*width: 550px;*/
+    /*margin-left: 388px;*/
+    /*margin-bottom: 10px;*/
+}
+
+.list_pages ul {
+    list-style-type: none;
+    margin: 0; /* Обнуляем значение отступов */
+    padding: 4px; /* Значение полей */
+}
+
+.list_pages ul li {
+    display: inline; /* Отображать как строчный элемент */
+}
+
+.list_pages ul a, .page_num_selected {
+    border-radius: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 19px; /*16*/
+    margin-right: 5px;
+    margin-left: 5px;
+    border: 1px solid #325D46;
+}
+
+.list_pages ul a {
+    color: #325D46;
+}
+
+.list_pages ul a:hover {
+    /*background-color: rgba(50, 93, 70, 0.8);*/
+    /*color: white;*/
+    box-shadow: 0px 0px 3px 2px rgba(50, 93, 70, 0.8);
+}
+
+.page_num_selected {
+    background-color: #325D46;
+    color: white;
+}

@@ -1,0 +1,177 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Концерты{% endblock %}
+
+{% block button_up_script %}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript">
+	function up() {
+		var top = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+		if(top > 0) {
+			window.scrollBy(0,((top+100)/-10));
+			t = setTimeout('up()',20);
+		} else clearTimeout(t);
+		return false;
+	}
+</script>
+{% endblock %}
+
+{% block active_concerts %}active{% endblock %}
+
+{% block article %}
+<aside>
+	<form action="">
+		<h3>Пройдите, пожалуйста, наш опрос</h3>
+		<p>
+			Ваш пол?<br>
+			<label><input type="radio" name="sex" value="M">Мужчина</label><br>
+			<label><input type="radio" name="sex" value="W">Женщина</label>
+		</p>
+		<p>
+			Вы считаете себя фанатом PLOHOYPAREN?<br>
+			<label><input type="radio" name="fan" value="Yes">Да</label><br>
+			<label><input type="radio" name="fan" value="No">Нет</label>
+		</p>
+		<p>
+			Какие альбомы вам нравятся?<br>
+			<label><input type="checkbox" id="Koldun" name="what_album_you_like" value="Koldun">"Колдун"</label><br>
+			<label><input type="checkbox" id="Plohoy_poc" name="what_album_you_like" value="Plohoy_poc">"Плохой поц"</label><br>
+			<label><input type="checkbox" id="Gde_plohoy_poc" name="what_album_you_like" value="Gde_plohoy_poc">"Где плохой поц?"</label><br>
+			<label><input type="checkbox" id="Planety" name="what_album_you_like" value="Planety">"Планеты"</label><br>
+			<label><input type="checkbox" id="Hello_my_name" name="what_album_you_like" value="Hello_my_name">"Hello my name"</label>
+		</p>
+		<p>
+			Какой ваш любимый жанр музыки?<br>
+			<select>
+				<option value="Hip-hop">Хип-Хоп</option>
+				<option value="Rock">Рок</option>
+				<option value="Pop">Поп</option>
+				<option value="Electronic">Электронная</option>
+				<option value="Reggae">Регги</option>
+				<option value="Jazz">Джаз</option>
+				<option value="Other">Другой</option>
+			</select>
+		</p>
+		<p>
+			<input type="submit" value="Отправить">
+			<input type="reset" value="Очистить">
+		</p>
+	</form>
+</aside>
+
+<article class="concerts_article">
+	<h1>ТУР ПО РОССИИ С ПРЕЗЕНТАЦИЕЙ НОВОГО АЛЬБОМА</h1>
+
+	<div class="concerts_ancestor">
+		<div class="concerts_row r1">
+			<div class="a_concert c1">
+				<div class="city_txt">
+					САНКТ-ПЕТЕРБУРГ
+				</div>
+				<div class="photo" data-title="11 июня 2022г. Начало в 19:00">
+					<a href="{% url 'Product_page_Piter.html' %}"><img class="city_pic" src="../../../static/main/images/Санкт-Петербург%20ночь.jpg"></a>
+				</div>
+				<div>
+					<a href = "https://ru.concerty.com/artist/613f2beb-292c-4d71-9cbc-0dc77cf7dbf5" class="city_but">   БИЛЕТЫ   </a>
+				</div>
+			</div>
+
+			<div class="a_concert c2">
+				<div class="city_txt">
+					МОСКВА
+				</div>
+				<div class="photo" data-title="18 июня 2022г. Начало в 19:00">
+					<img class="city_pic" src="../../../static/main/images/Москва%20ночь.jpg">
+				</div>
+				<div>
+					<a href = "https://ru.concerty.com/artist/613f2beb-292c-4d71-9cbc-0dc77cf7dbf5" class="city_but">   БИЛЕТЫ   </a>
+				</div>
+			</div>
+		</div>
+
+		<div class="concerts_row r2">
+			<div class="a_concert c3">
+				<div class="city_txt">
+					НИЖНИЙ НОВГОРОД
+				</div>
+				<div class="photo" data-title="25 июня 2022г. Начало в 19:00">
+					<img class="city_pic" src="../../../static/main/images/Нижний%20Новгород%20ночь.jpg">
+				</div>
+				<div>
+					<a href = "https://ru.concerty.com/artist/613f2beb-292c-4d71-9cbc-0dc77cf7dbf5" class="city_but">   БИЛЕТЫ   </a>
+				</div>
+			</div>
+
+			<div class="a_concert c4">
+				<div class="city_txt">
+					КАЗАНЬ
+				</div>
+				<div class="photo" data-title="2 июля 2022г. Начало в 19:00">
+					<img class="city_pic" src="../../../static/main/images/Казань%20ночь.jpg">
+				</div>
+				<div>
+					<a href = "https://ru.concerty.com/artist/613f2beb-292c-4d71-9cbc-0dc77cf7dbf5" class="city_but">   БИЛЕТЫ   </a>
+				</div>
+			</div>
+		</div>
+
+		<div class="concerts_row r3">
+			<div class="a_concert c5">
+				<div class="city_txt">
+					ЙОШКАР-ОЛА
+				</div>
+				<div class="photo" data-title="9 июля 2022г. Начало в 19:00">
+					<img class="city_pic" src="../../../static/main/images/Йошкар-Ола%20ночь.jpg">
+				</div>
+				<div>
+					<a href = "https://ru.concerty.com/artist/613f2beb-292c-4d71-9cbc-0dc77cf7dbf5" class="city_but">   БИЛЕТЫ   </a>
+				</div>
+			</div>
+
+			<div class="a_concert c6">
+				<div class="city_txt">
+					УФА
+				</div>
+				<div class="photo" data-title="16 июля 2022г. Начало в 19:00">
+					<img class="city_pic" src="../../../static/main/images/Уфа%20ночь.jpg">
+				</div>
+				<div>
+					<a href = "https://ru.concerty.com/artist/613f2beb-292c-4d71-9cbc-0dc77cf7dbf5" class="city_but">   БИЛЕТЫ   </a>
+				</div>
+			</div>
+		</div>
+
+		<div class="concerts_row r4">
+			<div class="a_concert c7">
+				<div class="city_txt">
+					НОВОСИБИРСК
+				</div>
+				<div class="photo" data-title="23 июля 2022г. Начало в 19:00">
+					<img class="city_pic" src="../../../static/main/images/Новосибирск%20ночь.jpg">
+				</div>
+				<div>
+					<a href = "https://ru.concerty.com/artist/613f2beb-292c-4d71-9cbc-0dc77cf7dbf5" class="city_but">   БИЛЕТЫ   </a>
+				</div>
+			</div>
+
+			<div class="a_concert c8">
+				<div class="city_txt">
+					КРАСНОЯРСК
+				</div>
+				<div class="photo" data-title="30 июля 2022г. Начало в 19:00">
+					<img class="city_pic" src="../../../static/main/images/Красноярск%20ночь.jpg">
+				</div>
+				<div>
+					<a href = "https://ru.concerty.com/artist/613f2beb-292c-4d71-9cbc-0dc77cf7dbf5" class="city_but">   БИЛЕТЫ   </a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="back-top">
+		<a href="#" onclick="return up()" title="Вернуться к началу" id="topbutton">
+			<i class="fa-solid fa-circle-up"></i>
+		</a>
+	</div>
+</article>
+{% endblock %}

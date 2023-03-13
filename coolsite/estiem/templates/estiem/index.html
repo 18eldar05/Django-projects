@@ -1,0 +1,26 @@
+{% extends 'estiem/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="content_and_list_pages_end">
+        <div class="total_events">
+            {% for p in posts %}
+                <div class="event_container">
+                    <a href="{{p.get_absolute_url}}">
+                        {% if p.photo %}
+                            <img class="event_img" src="{{p.photo.url}}">
+                        {% else %}
+                            <img class="event_img" src="{% static 'estiem/images/estiem_default.jpg' %}">
+                        {% endif %}
+                        <h4 class="event_title">{{p.title}}</h4>
+                        <span class="cat_{{p.cat_id}} index_cat">{{p.cat}}</span>
+                        <span class="index_time">{{p.time_update|date:"d-m-Y H:i:s"}}</span>
+                    </a>
+                    {# <!--<p class="index_content">{{p.content|linebreaks|truncatewords:50}}</p>--> #}
+                </div>
+            {% endfor %}
+        </div>
+{% endblock %}
+{% block content_and_list_pages_end %}
+    </div>
+{% endblock %}
